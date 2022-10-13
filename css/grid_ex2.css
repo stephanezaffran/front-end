@@ -1,0 +1,43 @@
+p{
+    padding: 30px;
+}
+
+section{
+    margin:auto;
+    gap: 15px;
+    padding: 10px;
+    display:grid;
+    grid-template-rows:  repeat(4,200px);
+    width: 90%;
+    align-content:center ;
+
+}
+.section1{
+    grid-template-columns: 1fr 3fr ;
+    
+}
+
+.article1{
+    background-color: rgb(211, 33, 62);
+}
+.article2{
+    background-color: rgb(52, 170, 190);
+}
+.article3{
+  background-color: yellow;
+  grid-column:   span 2
+}
+
+section > article{
+    border: 3px solid black ;
+    position: relative;
+    text-align: center;
+
+}
+article  p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}

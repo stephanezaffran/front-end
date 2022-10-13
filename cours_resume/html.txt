@@ -1,0 +1,3 @@
+reduire tous les indent => ctrl+k ctrl+0
+
+aside element 

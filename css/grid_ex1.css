@@ -1,0 +1,42 @@
+p{
+    padding: 30px;
+}
+div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+section{
+  
+    padding: 10px;
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 200px 100px 300px;
+}
+.centreVerticalement {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+   }
+.section1{
+    width: 70%;
+}
+.section2{
+    width: 30%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:600px;
+}
+section > article{
+    border: 3px solid black ;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+article > p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

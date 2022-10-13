@@ -1,0 +1,15 @@
+p{
+    color:black;
+}
+li{
+    color:red
+}
+body{
+    
+    background-image: url("../img/download.jpg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+li:nth-child(3):hover{
+    color: blue;
+  }

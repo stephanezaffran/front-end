@@ -1,0 +1,63 @@
+
+
+.mygrid{
+    width: 40%;
+    height: 800px;
+    gap: 10px;
+    margin: auto;
+    display:grid;
+    font-size: large;
+    color: white;
+    text-align: center;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(11, 1fr );
+    grid-template-areas:    
+    'a a a a a a a a ' 
+    'b b b c c c c c '
+    'b b b c c c c c'
+    'b b b c c c c c'
+    'd d d c c c c c'
+    'd d d c c c c c'
+    'd d d e e e e e'
+    'd d d e e e e e'
+    'f f f f f f g g'
+    'f f f f f f g g'
+    'h h h h h h h h';
+     
+}
+.divt{
+    padding-top: 20px;
+}
+.div1{
+    grid-area: a;
+    background-color: rgb(159, 217, 240);
+
+}
+.div2{
+    grid-area: b;
+    background-color: rgb(225, 207, 243);
+}
+.div3{
+    grid-area: c;
+    background-color: rgb(255, 196, 0);
+}
+.div4{
+    grid-area: d;
+    background-color: rgb(163, 221, 77);
+}
+.div5{
+    grid-area: e;
+    background-color: rgb(95, 88, 48);
+}
+.div6{
+    grid-area: f;
+    background-color: rgb(1, 141, 36);
+}
+.div7{
+    grid-area: g;
+    background-color: pink;
+}
+.div8{
+    grid-area: h;
+    background-color: rgb(255, 136, 0);
+}

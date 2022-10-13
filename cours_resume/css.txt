@@ -1,0 +1,88 @@
+
+----------------    position     ----------
+
+static      ->      static en debut de ligne a sa place dans la page
+fixed       ->      on defini sa place fix dans la page et il ne bouge pas meme si on scroll
+relative    ->      on defini ou le block sera positionne (left right top bottom ect)
+absolute    ->      se positionne a l'imterieur du block mere, ne depend pas de la page mais uniquement du block mere
+sticky      ->      on defini un maximum en cas de scroll il reste fixe, il reste tjr visible .
+
+---------------- Relative Lengths ----------
+
+rem - Relative to font-size of the root element (css html -> font size)
+em  - Relative to the font-size of the element (2em means 2 times the size of the current font)
+vw  - pourcentage de la fenetre entiere largeur
+vh  - pourcentage de la fenetre entiere hauteur
+%   - Relative to the parent element ()
+
+
+----------------    clearfix     ----------
+
+ Si un élément est plus grand que l'élément qui le contient et qu'il est flottant, 
+ il débordera de son conteneur. 
+ Vous pouvez utiliser le "hack clearfix" pour résoudre ce problème 
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+----------------       flex        ----------
+
+https://codepen.io/enxaneta/full/adLPwv/
+
+            ----  Properties for the flex container ----
+
+
+flex-direction ( container )
+row:    row-reverse:    column:     column-reverse:
+
+------------------
+
+flex-wrap ( container )
+nowrap:  wrap:   wrap-reverse:
+
+------------------
+
+align-items ( container )
+flex-start:  flex-end:   center:   baseline:   stretch:
+
+------------------
+
+justify-content ( container )
+flex-start:   flex-end:   space-between:   center:   space-around:
+
+------------------
+
+align-content ( container )
+flex-start:     flex-end:    center:     space-between:      space-around:      stretch:
+
+
+
+            ----  Properties for the flex items ----
+
+
+------------------
+
+align-self ( flex items )
+auto:    flex-start:     flex-end:      center:      baseline:      stretch:
+
+------------------
+
+flex-grow ( flex items )  -> repartit les element en part sur la ligne (chaque element a la meme taille sauf element 2, 2x plus GRAND )
+elemento 1: 1    elemento 2:2     elemento 3:1    elemento 4:1    elemento 5:1
+
+------------------
+
+flex-shrink ( flex items ) -> repartit les element en part sur la ligne (chaque element a la meme taille sauf element 2, 2x plus PETIT )
+elemento 1: 1    elemento 2:2     elemento 3:1    elemento 4:1    elemento 5:1
+
+------------------
+
+order ( property for flex items ) -> redefinir priorite naturel pour certains elements 
+elemento 1: 1    elemento 2:2     elemento 3:1    elemento 4:1    elemento 5:1
+------------------
+

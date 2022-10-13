@@ -1,0 +1,239 @@
+
+            --------------- DOM -----------
+
+element.children[index]
+element.firstElementChild
+element.lastElementChild
+element.parentNode
+element.nextElementSibling
+element.previousElementSibling
+element.textContent
+
+----- get an element from the html ----
+
+element.getElementById()
+element.getElementsByClassName()
+element.getElementsByTagName()
+element.querySelector()
+element.querySelectorAll()
+
+
+    let paragraphs = document.getElementsByTagName("p");
+    alert("Content in the second paragraph is " + paragraphs[1].innerHTML);
+    document.getElementById("second").innerHTML = "The orginal message is changed.";
+  
+   
+    BAD  - document.getElementsByTagName('input').value = 5;   
+    GOOD - document.getElementsByTagName('input')[0].value = 5;
+
+
+-------------- Creating/Adding/Deleting DOM Nodes -------------
+
+     let newDiv = document.createElement('div')  
+
+     let newTextNode = document.createTextNode('Here I am');
+
+ ----- Adding Element : AppendChild() -----
+
+    newDiv.appendChild(newTextNode);
+    document.body.appendChild(newDiv);
+
+ ----- Changing The HTML Content Of An Element-----
+
+    document.getElementById("header").textContent = "Hello World!";
+    document.getElementsByTagName("div")[0].innerHTML = "<h1>Hello World!</h1>"
+
+ -----  Deleting Elements: RemoveChild() -----
+
+    let parentElem = document.getElementById("main");
+    let childElem = document.getElementById("hint");
+    parentElem.removeChild(childElem);
+
+ ----- querySelectorAll -----
+
+    let demoQueryAll = document.querySelectorAll('.demo-query-all');
+    demoQueryAll.forEach(query => {
+        query.style.border = '1px solid green';
+        });
+
+    let elements = document.querySelectorAll('ul > li:last-child');
+    for (let elem of elements) {
+      alert(elem.innerHTML); // "test", "passed"
+    }
+
+ ----- elem.closest(css) - get closest elem who have the good param -----
+
+     <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 1</li>
+      </ul>
+    </div>
+
+    <script>
+      let chapter = document.querySelector('.chapter'); // LI
+
+      alert(chapter.closest('.book')); // UL
+      alert(chapter.closest('.contents')); // DIV
+
+      alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
+    </script>
+
+elem.hasAttribute(name)	-> checks for existence.
+elem.getAttribute(name)	-> gets the value of an attribute.if !exist return ""
+elem.setAttribute(name, value) -> modifies the value of an element’s attribute.
+                                2 parameters- the name of the attribute, and its new value
+elem.removeAttribute(name) -> remove the entire HTML attribute from an element
+
+<body>
+  <div id="elem" about="Elephant" style=""></div>
+
+  <script>
+    let newDiv = document.getElementById("elem")
+
+    //getAttribute('name attribute')
+    newDiv.getAttribute('about'); // return 'Elephant'
+
+    //setAttribute(name attribute, value attribute)
+    newDiv.setAttribute('style', "color:blue;");  
+
+    //you get --> <div id="elem" about="Elephant" style="color:blue" ></div>
+
+    //loop through the attributes of an element
+    for (let attr of elem.attributes) { // Lists all attributes
+      alert(attr.name + '=' + attr.value);
+    }
+  </script>
+</body>
+
+----------- className -----------
+modifie la class d'un element
+
+    let name = element.className ; -> get the className
+    element.className = 'newClassName'; -> change className
+
+----------- classList -----------
+ajoute ou modifie une classe d'un element sans modifier les autres
+
+    elem.classList.add(ClassName)    -> Add a new class to the element
+    elem.classList.remove(ClassName) ->	Remove the class from the element
+    elem.classList.replace(oldClass, newClass) ->	Replace the former class by the new one
+    elem.classList.contains(ClassName) -> Boolean : check if the attribute contains the class
+    em.classList.add(Class1, Class2,...) -> Add several new classes to the element
+    elem.classList.remove(Class1, Class2,...) -> Remove several classes from the element
+    elem.classList.toggle(nameOfClass, true/false) -> 
+
+
+<body>
+  <div id="elem" about="Elephant" class="foo"></div>
+
+  <script>
+    let div = document.getElementById("elem")
+
+    // remove class : remove('name of class')
+    div.classList.remove("foo");
+
+    // add class : add ('name of class')
+    div.classList.add("anotherclass");
+    //<div id="elem" about="Elephant" class="anotherclass"></div>
+
+    // add or remove multiple classes
+    div.classList.add("foo", "bar", "baz");
+    div.classList.remove("foo", "bar", "baz");
+
+    // replace class "foo" with class "bar"
+    div.classList.replace("foo", "bar");
+
+    // check if the attribute class contains foo : return True or False
+    div.classList.contains("foo");
+
+    // if visible is set remove it, otherwise add it
+    div.classList.toggle("visible");
+
+    // add/remove visible, depending on test conditional, i less than 10
+    div.classList.toggle("visible", i < 10 );   
+
+  </script>
+</body>
+
+
+
+modal 
+
+alert()
+prompt()
+confirm()
+
+.map --- > execute une fonction sur chaque element de l'array --array.map(x=>x+1) rajoute 1 a chaque element x de la liste
+.trim ---> retire les espaces 
+.some ----> fais un test sur chaque element array.some(e=>e) ..... a verifier
+
+.join (",")          => assemble une array en string avec separateur
+.split('')           => separe les elements en fonction du separateur
+.sort((a,b)=>a-b)    => inverse si fonction renvoie negatif
+.slice (1,3)         => new array elem 1 -> 3 (non inclu)             
+
+
+foreach(x=> func)
+
+console.log((str.split(' ').sort((x,y) => x[0].charCodeAt(0)-y[0].charCodeAt(0))).join('-'))
+
+        --------map/foreach/filter/ect-------
+
+------------map---------
+
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(item => item * 2);
+console.log(doubled); // [2, 4, 6, 8]
+
+------------foreach---------
+
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element));
+
+------------reduce---------
+arr.reduce(callback[, initialValue])
+
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce(function (accumulator , currentValue ) {
+  return result + item;
+}, 0);
+console.log(sum); // 10
+
+------------filter---------
+
+const numbers = [1, 2, 3, 4];
+const evens = numbers.filter(item => item % 2 === 0);
+console.log(evens); // [2, 4]
+
+------------some---------
+
+
+------------find---------
+
+
+------------join---------
+
+
+------------sort---------
+compare n n+1 , si ca renvoie un nombre negatif => inverse ect....
+
+const array1 = ['100000','1', '4', '21', '30'];
+array1.sort((a, b) => a.length  - b.length );
+console.log(array1);
+ Array ["1", "4", "21", "30", "100000"]
+
+        --------for/for ... of/-------
+
+
+
+        --------destructuring-------
+        let x = [collection] => get array 
+
+
+---------- ... ---  spread operator --------
+
+... permet de copier un type reference 
+
+B = array1    => pas fait une copie mais juste B pointe sur array1
+B = ...array1 => B est une copie independante de array1

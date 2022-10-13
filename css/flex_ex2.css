@@ -1,0 +1,45 @@
+
+
+.flex-container{
+    position: relative;
+    display: inline-flex;
+    flex-direction:column;
+    justify-content: space-around;   
+    border:4px solid;
+    border-color: red;
+    width:70%;
+    height: 700px;
+    align-content: wrap;
+    align-items: flex-start;
+   padding: 5px;
+    margin:30px;
+}
+
+.mydiv{
+    background-color: rgb(67, 193, 252);
+    
+    display: block;
+    /* border:3px solid; */
+    border-color: black;
+    display: table;      
+    height: 300px; 
+    margin: 4px;
+}
+
+p{
+    
+    font-size: 1cm;   
+    color: white;
+    text-align: center;
+    vertical-align:middle;
+    display: table-cell;
+}
+.div1{  
+  width: 100%;
+  
+}
+.div2{
+    width: 20%;
+    align-self: flex-end;
+
+}
